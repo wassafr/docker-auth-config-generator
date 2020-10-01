@@ -33,6 +33,17 @@ function App() {
     }
   };
 
+  const generateK8s = (data) => {
+    return `apiVersion: v1
+kind: Secret
+metadata:
+  name: CHANGE_THIS
+  namespace: AND_THIS
+data:
+  .dockerconfigjson: ${btoa(data)}
+type: kubernetes.io/dockerconfigjson`
+  }
+
   useEffect(() => {
     const generateResult = () => {
       const data = {
@@ -75,11 +86,14 @@ function App() {
     } else {
       return (
         <div>
-          <Result title="Result" id="result" className="mb-3">
+          <Result title="JSON" id="result" className="mb-3">
             {result}
           </Result>
-          <Result title="Result (Base64)" id="result-b64">
+          <Result title="Base64" id="result-b64" className="mb-3">
             {btoa(result)}
+          </Result>
+          <Result title="Kubernetes Secret" id="result-kubernetes">
+            {generateK8s(result)}
           </Result>
         </div>
       )
