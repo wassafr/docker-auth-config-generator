@@ -163,7 +163,7 @@ function App() {
       <footer className="px-5 mt-2">
         <div>Provided by <a href="https://wassa.io" target="_blank" rel="noopener noreferrer">Wassa</a></div>
         <div>
-          <a href="https://github.com/wassafr" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/wassafr/docker-auth-config-generator" target="_blank" rel="noopener noreferrer">
             <img width="24" height="24" src="/i/gh.png" alt="Github" />
           </a>
         </div>
